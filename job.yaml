@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: secret-santa-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: secret-santa-job
+        image: yash5090/secret-santa:latest
+        ports:
+        - containerPort: 3000
+      restartPolicy: OnFailure
